@@ -1,4 +1,6 @@
 require 'minitest/autorun'
+require 'pry'
+require "money"
 
 require_relative '../lib/percentage'
 
@@ -28,6 +30,11 @@ describe 'Percentage object' do
   it 'may be frozen' do
     frozen = Percentage.new(10).freeze
     frozen.to_f.must_equal(10)
+  end
+
+  it 'is Numeric' do
+    money = Money.new(10) * Percentage.new(10)
+    money.must_equal(Money.new(1))
   end
 end
 

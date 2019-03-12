@@ -1,6 +1,6 @@
 require 'bigdecimal'
 
-class Percentage
+class Percentage < Numeric
   attr_reader :value
 
   include Comparable
